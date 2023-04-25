@@ -425,15 +425,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.data[2].time
-      value: 0.7026158
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.data[3].time
@@ -441,11 +441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.data[1].value
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.data[2].value
-      value: 0.5012455
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.data[3].value
@@ -453,35 +453,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.data[1].inSlope
-      value: 0
+      value: 0.019543631
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.data[2].inSlope
-      value: 3.0517612
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.data[1].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
-      propertyPath: cloudsDensity.m_Curve.Array.data[1].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
-      propertyPath: cloudsDensity.m_Curve.Array.data[2].inWeight
       value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
-      propertyPath: cloudsDensity.m_Curve.Array.data[2].outSlope
-      value: 3.0517612
+      propertyPath: cloudsDensity.m_Curve.Array.data[1].outSlope
+      value: 0.019543631
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
-      propertyPath: cloudsDensity.m_Curve.Array.data[1].outWeight
+      propertyPath: cloudsDensity.m_Curve.Array.data[2].inWeight
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
+      propertyPath: cloudsDensity.m_Curve.Array.data[2].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
+      propertyPath: cloudsDensity.m_Curve.Array.data[1].outWeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 172509917, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: cloudsDensity.m_Curve.Array.data[2].outWeight
-      value: 0.10938214
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1000010237739742, guid: fe69c79d384eb4f4f944d4ec253d357a, type: 3}
       propertyPath: m_Name
