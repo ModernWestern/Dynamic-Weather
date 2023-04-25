@@ -44,7 +44,7 @@ Once you've created the JSON file, you'll need to upload it to a mock API servic
 ~~~
 https://run.mocky.io/v3/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ~~~
-Make sure to use only the last part of the URL (`xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`) in your app's code.
+Make sure to use only the last part of the URL (`xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`).
 
 ## Running the App
 
