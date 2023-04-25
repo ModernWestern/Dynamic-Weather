@@ -1,5 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
+using JetBrains.Annotations;
+using System.Collections.Generic;
 
 namespace Json2CSharp
 {
@@ -7,10 +9,13 @@ namespace Json2CSharp
     public class WeatherData
     {
         public Coord coord;
-        public Main main;
-        public Wind wind;
-        public Rain rain;
-        public Clouds clouds;
+        [CanBeNull] public Main main;
+        [CanBeNull] public Wind wind;
+        [CanBeNull] public Rain rain;
+        [CanBeNull] public Clouds clouds;
+        [CanBeNull] public List<Weather> weather;
+
+        public Weather Weather => weather?.Count > 0 ? weather[0] : null;
     }
 
     [Serializable]
@@ -36,7 +41,20 @@ namespace Json2CSharp
     [Serializable]
     public class Rain
     {
-        [JsonProperty("1h")] public float _1h;
+        [JsonProperty("1h")] public float oneHour;
+    }
+
+    [Serializable]
+    public class Weather
+    {
+        [JsonProperty("main")] public string description;
+
+        enum Description
+        {
+            Thunderstorm,
+            Clouds,
+            Rain
+        }
     }
 
     [Serializable]

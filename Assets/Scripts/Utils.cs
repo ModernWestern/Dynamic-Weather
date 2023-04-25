@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
+using Newtonsoft.Json;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.Networking;
-using UnityEngine.UIElements;
+using System.Collections.Generic;
 
 namespace Utils
 {
@@ -46,8 +46,19 @@ namespace Utils
                 }
                 else
                 {
-                    response?.Invoke(JsonUtility.FromJson<T>(request.downloadHandler.text));
-
+                    try
+                    {
+                        response?.Invoke(JsonConvert.DeserializeObject<T>(request.downloadHandler.text));
+                        
+                        // response?.Invoke(JsonUtility.FromJson<T>(request.downloadHandler.text)); // Newtonsoft JsonProperty attribute do not work with JsonUtility.
+                    }
+                    catch (Exception ex)
+                    {
+#if UNITY_EDITOR
+                        Debug.Log($"<color=red>An error occurred during deserialization of the object {typeof(T).Name}:</color> " + ex.Message);
+#endif
+                    }
+                    
                     success?.Invoke(true);
                 }
             }

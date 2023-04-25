@@ -11,11 +11,13 @@ public static class DynamicWeatherController
 
     private static GameplayData data;
 
+    private const string Weather = "weather", Astronomy = "astronomy";
+
     public static void Fetch(MonoBehaviour mono, City city, List<Api> api, Action<GameplayData> completed)
     {
-        var weather = api.FirstOrDefault(a => a.name.Equals("weather"));
+        var weather = api.FirstOrDefault(a => a.name.Equals(Weather));
 
-        var astronomy = api.FirstOrDefault(a => a.name.Equals("astronomy"));
+        var astronomy = api.FirstOrDefault(a => a.name.Equals(Astronomy));
 
         if (weather == null || astronomy == null)
         {
@@ -25,7 +27,7 @@ public static class DynamicWeatherController
         if (currenCity == city.name)
         {
             completed?.Invoke(data);
-            
+
             return;
         }
 
@@ -41,12 +43,13 @@ public static class DynamicWeatherController
                                         ad.sun_azimuth,
                                         wd.coord.lat,
                                         wd.coord.lon,
-                                        wd.main.temp,
-                                        wd.main.humidity,
-                                        wd.wind.speed,
-                                        wd.wind.deg,
-                                        wd.clouds.all,
-                                        wd.rain._1h,
+                                        wd.main?.temp ?? 0,
+                                        wd.main?.humidity ?? 0,
+                                        wd.wind?.speed ?? 0,
+                                        wd.wind?.deg ?? 0,
+                                        wd.clouds?.all ?? 0,
+                                        wd.rain?.oneHour ?? 0,
+                                        wd.Weather.description,
                                         DateTime.UtcNow.AddHours(city.gmt));
 
                 completed?.Invoke(data);
