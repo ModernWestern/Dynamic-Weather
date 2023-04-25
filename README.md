@@ -41,7 +41,7 @@ Replace the "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" placeholders with your actual AP
 
 Once you've created the JSON file, you'll need to upload it to a mock API service. We recommend using [Mocky](https://www.mocky.io/) for this purpose. Create a new mock and upload the JSON file. Copy the URL of the mock, which should look something like this:
 
-~~~json
+~~~
 https://run.mocky.io/v3/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ~~~
 Make sure to use only the last part of the URL (`xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`) in your app's code.
