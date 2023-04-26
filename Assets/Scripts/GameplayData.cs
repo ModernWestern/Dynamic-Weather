@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Utils;
+using System;
+using Json2CSharp;
 
 public class GameplayData
 {
@@ -31,7 +33,7 @@ public class GameplayData
         Location.WindAngle = windDeg;
         Location.Clouds = clouds;
         Location.Rain = rain;
-        Location.WeatherDescription = weatherDescription;
+        Location.WeatherDescription = weatherDescription.ToEnum<Weather.Description>();
         Location.Time = time;
     }
 
@@ -45,13 +47,16 @@ public struct LocationData
 {
     public float Altitude, Azimuth, Latitude, Longitude, Temp, Humidity, WindSpeed, WindAngle, Clouds, Rain;
 
-    public string City, Country, WeatherDescription;
+    public Weather.Description WeatherDescription;
+
+    public string City, Country;
 
     public DateTime Time;
 
+    public string Name => $"{City.ToFirstUpper()},{Country.ToUpper()}";
+
     public override string ToString()
     {
-        return
-            $"Lat: {Latitude}, Long: {Longitude}, Temp: {Temp}, Humidity: {Humidity}, Wind speed: {WindSpeed}, Wind angle: {WindAngle}, Clouds: {Clouds}, Rain: {Rain}, Weather Description: {WeatherDescription}";
+        return $"<color=yellow>[{Name}]</color> Temp: {Temp}, Wind speed: {WindSpeed}, Wind angle: {WindAngle}, Clouds: {Clouds}, Rain: {Rain}, Weather Description: {WeatherDescription}";
     }
 }

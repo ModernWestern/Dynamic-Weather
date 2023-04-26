@@ -49,7 +49,7 @@ namespace Utils
                     try
                     {
                         response?.Invoke(JsonConvert.DeserializeObject<T>(request.downloadHandler.text));
-                        
+
                         // response?.Invoke(JsonUtility.FromJson<T>(request.downloadHandler.text)); // Newtonsoft JsonProperty attribute do not work with JsonUtility.
                     }
                     catch (Exception ex)
@@ -58,7 +58,7 @@ namespace Utils
                         Debug.Log($"<color=red>An error occurred during deserialization of the object {typeof(T).Name}:</color> " + ex.Message);
 #endif
                     }
-                    
+
                     success?.Invoke(true);
                 }
             }
@@ -136,6 +136,19 @@ namespace Utils
         }
     }
 
+    public static class UEnum
+    {
+        public static string EnumToString<T>(this T enumValue) where T : Enum
+        {
+            return Enum.GetName(typeof(T), enumValue);
+        }
+
+        public static T ToEnum<T>(this string str) where T : Enum
+        {
+            return (T)Enum.Parse(typeof(T), str);
+        }
+    }
+
     public static class UMath
     {
         public static float Map(this float value, float inMin, float inMax, float outMin, float outMax)
@@ -185,6 +198,18 @@ namespace Utils
             var mappedValue = Mathf.Lerp(outMin, outMax, curveValue);
 
             return mappedValue;
+        }
+    }
+
+    public static class UDebug
+    {
+        public static void ClearConsole()
+        {
+            var logEntries = System.Type.GetType("UnityEditor.LogEntries,UnityEditor.dll");
+
+            var clearMethod = logEntries.GetMethod("Clear", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public);
+
+            clearMethod.Invoke(null, null);
         }
     }
 

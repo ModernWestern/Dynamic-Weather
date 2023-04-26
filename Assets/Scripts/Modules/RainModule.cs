@@ -65,8 +65,7 @@ public class RainModule : MonoBehaviour
         }
 
         particle.gameObject.SetActive(true);
-
-
+        
         var module = particle.emission;
 
         module.rateOverTime = emission.HasValue ? Mathf.CeilToInt(emission.Value.CurveMap(0, 5, 0, 1000, rainStrength)) : 1000;

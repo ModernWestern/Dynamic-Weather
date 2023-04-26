@@ -2892,7 +2892,7 @@ MonoBehaviour:
   inputField: {fileID: 5057565549035243886}
   success: {r: 0.3, g: 1, b: 0.6484716, a: 1}
   fail: {r: 1, g: 0.495283, b: 0.495283, a: 1}
-  text: 
+  text: ab234001-755a-4113-b8cc-0e17e30d2ae1
 --- !u!1001 &2350600869211000837
 PrefabInstance:
   m_ObjectHideFlags: 0

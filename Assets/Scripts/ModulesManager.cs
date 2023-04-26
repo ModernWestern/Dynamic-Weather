@@ -1,4 +1,5 @@
 using Utils;
+using System;
 using Json2CSharp;
 using UnityEngine;
 using System.Collections.Generic;
@@ -34,6 +35,8 @@ public class ModulesManager : MonoBehaviour
         {
             DynamicWeatherController.Fetch(this, city, api, data =>
             {
+                sun.Intensity = Tuple.Create(data.Location.WeatherDescription, data.Location.Clouds);
+
                 sun.Position = new Vector2(data.Location.Altitude, data.Location.Azimuth);
 
                 clouds.Direction = data.Location.WindAngle;
@@ -42,12 +45,13 @@ public class ModulesManager : MonoBehaviour
 
                 clouds.Density = data.Location.Clouds;
 
-                sun.Intensity = data.Location.WeatherDescription == "Rain" ? data.Location.Clouds <= 80 ? data.Location.Clouds * 1.25f : data.Location.Clouds : data.Location.Clouds / 1.25f;
-
                 rain.OneHour = data.Location.Rain;
 
                 gameplayData = data;
 
+#if UNITY_EDITOR
+                UDebug.ClearConsole();
+#endif
                 Debug.Log(data);
             });
 
