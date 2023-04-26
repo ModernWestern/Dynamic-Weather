@@ -5,19 +5,19 @@ public class GameplayData
     public readonly LocationData Location;
 
     public GameplayData(string city,
-        string country,
-        float altitude,
-        float azimuth,
-        float lat,
-        float lon,
-        float temp,
-        float humidity,
-        float windSpeed,
-        float windDeg,
-        float clouds,
-        float rain,
-        string weatherDescription,
-        DateTime time)
+                        string country,
+                        float altitude,
+                        float azimuth,
+                        float lat,
+                        float lon,
+                        float temp,
+                        float humidity,
+                        float windSpeed,
+                        float windDeg,
+                        float clouds,
+                        float rain,
+                        string weatherDescription,
+                        DateTime time)
     {
         Location.City = city;
         Location.Country = country;

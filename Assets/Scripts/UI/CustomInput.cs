@@ -10,6 +10,16 @@ public class CustomInput : MonoBehaviour
 
     [SerializeField] private Color success, fail;
 
+    [SerializeField] private string text;
+
+    private void Awake()
+    {
+        if (!string.IsNullOrEmpty(text))
+        {
+            inputField.text = text;
+        }
+    }
+
     public bool Success
     {
         set => background.color = value ? success : fail;

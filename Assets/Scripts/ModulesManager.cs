@@ -7,11 +7,11 @@ public class ModulesManager : MonoBehaviour
 {
     public SunModule sun;
 
+    public RainModule rain;
+
     public CloudsModule clouds;
 
-    [Header("UI Modules"), Space]
-    
-    public InputModule input;
+    [Header("UI Modules"), Space] public InputModule input;
 
     public CityButtonsModule buttons;
 
@@ -42,7 +42,9 @@ public class ModulesManager : MonoBehaviour
 
                 clouds.Density = data.Location.Clouds;
 
-                sun.Intensity = data.Location.Clouds;
+                sun.Intensity = data.Location.WeatherDescription == "Rain" ? data.Location.Clouds <= 80 ? data.Location.Clouds * 1.25f : data.Location.Clouds : data.Location.Clouds / 1.25f;
+
+                rain.OneHour = data.Location.Rain;
 
                 gameplayData = data;
 

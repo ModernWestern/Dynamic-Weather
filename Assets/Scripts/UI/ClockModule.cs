@@ -16,16 +16,16 @@ public class ClockModule : MonoBehaviour
     [SerializeField] private float parentPadding = 20;
 
     private string current;
+    
+    private float clockHeight;
+
+    private List<int> ids = new();
 
     public City City
     {
         set => UpdateClock(value);
     }
-
-    private float clockHeight;
-
-    private List<int> ids = new();
-
+    
     private void Awake()
     {
         ClockPosition(parentPadding);

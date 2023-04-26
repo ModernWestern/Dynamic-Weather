@@ -49,11 +49,14 @@ namespace Json2CSharp
     {
         [JsonProperty("main")] public string description;
 
-        enum Description
+        public enum Description
         {
             Thunderstorm,
+            Clear,
             Clouds,
-            Rain
+            Haze,
+            Rain,
+            Fog
         }
     }
 
