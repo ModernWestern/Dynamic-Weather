@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "com.modernwestern.dentedpixel.leantween-package": {
+    "com.dentedpixel.leantween": {
       "version": "https://github.com/ModernWestern/unity.dentedpixel-leantween-package.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "cd86b8606fb0661112ab5b5459890e6a692de2f5"
+      "hash": "a401883ecccacf839e9b3b03c062a7760e82a899"
     },
     "com.unity.collab-proxy": {
       "version": "1.17.7",
