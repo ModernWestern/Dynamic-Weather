@@ -31,7 +31,7 @@ public class CloudsModule : MonoBehaviour
         {
             foreach (var cloud in clouds)
             {
-                cloud.GetComponent<Renderer>().material.SetFloat(_Speed, value.CurveMap(0, MaxSpeed, -0.01f, -0.5f, cloudsSpeed));
+                cloud.GetComponent<Renderer>().material.SetFloat(_Speed, value.RemapWithCurve(0, MaxSpeed, -0.01f, -0.5f, cloudsSpeed));
             }
         }
     }
@@ -42,7 +42,7 @@ public class CloudsModule : MonoBehaviour
         {
             foreach (var cloud in clouds)
             {
-                cloud.GetComponent<Renderer>().material.SetFloat(_Density, value.CurveMap(0, 100, 2, 0, cloudsDensity));
+                cloud.GetComponent<Renderer>().material.SetFloat(_Density, value.RemapWithCurve(0, 100, 2, 0, cloudsDensity));
             }
         }
     }

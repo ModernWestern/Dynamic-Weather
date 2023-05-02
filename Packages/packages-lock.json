@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "a401883ecccacf839e9b3b03c062a7760e82a899"
     },
+    "com.modernwestern.library": {
+      "version": "https://github.com/ModernWestern/unity.modernwestern.library-package.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "43ff01d8f4069229b04690f32801e9e415c9f879"
+    },
     "com.unity.collab-proxy": {
       "version": "1.17.7",
       "depth": 0,

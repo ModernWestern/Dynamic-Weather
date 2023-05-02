@@ -30,7 +30,7 @@ public class SunModule : MonoBehaviour
         {
             Color.RGBToHSV(dayLight, out color.x, out color.y, out _);
 
-            color.z = CalcSunIntensity(value.Item1, value.Item2).LogarithmicMap(0, 100, 1, 0, 3);
+            color.z = CalcSunIntensity(value.Item1, value.Item2).LogarithmicRemapToRange(0, 100, 1, 0, 3);
 
             light.color = Color.HSVToRGB(color.x, color.y, color.z);
         }
